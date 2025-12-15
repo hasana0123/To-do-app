@@ -8,7 +8,7 @@ const DeleteConfirm = ({ isOpen, onConfirm, onCancel }) => {
       <div className={styles.modal}>
         <h3 className={styles.title}>Delete Todo</h3>
         <p className={styles.text}>
-          Are you sure you want to delete this todo? This action cannot be undone.
+          Are you sure that you want to delete this todo? This cannot be undone.
         </p>
 
         <div className={styles.actions}>

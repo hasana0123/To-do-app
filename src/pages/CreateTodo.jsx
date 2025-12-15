@@ -15,7 +15,7 @@ const CreateTodo = () => {
       setLoading(true);
       setError("");
 
-      await new Promise((res) => setTimeout(res, 600));
+      await new Promise((res) => setTimeout(res, 800));
 
       addTodo({
         id: Date.now(),
