@@ -15,7 +15,6 @@ const CreateTodo = () => {
       setLoading(true);
       setError("");
 
-      // simulate API delay (IMPORTANT)
       await new Promise((res) => setTimeout(res, 600));
 
       addTodo({

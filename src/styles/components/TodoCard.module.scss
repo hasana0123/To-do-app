@@ -11,9 +11,7 @@
         height: 160px;
         object-fit: cover;
     }
-    // border: 2px red solid;
-    // height: 20rem;
-    // width: 24rem;
+    
     &:hover {
         background: rgba(236, 236, 250, 0.777);
         cursor: pointer;
@@ -25,7 +23,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // border: 2px red solid;
 }
 
 .actions {
