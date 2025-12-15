@@ -1,0 +1,46 @@
+.wrapper {
+      max-width: 1200px;
+    // min-width: 100vw;
+    margin: 5cqb auto;
+    padding: 0 1rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.createBtn {
+    background: #3b82f6;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover {
+        background: #2563eb;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.loading,
+.empty {
+    text-align: center;
+    margin-top: 4rem;
+    color: #6b7280;
+    font-size: 1rem;
+}

@@ -1,0 +1,13 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;   
+  padding: 0.25rem 0.6rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.badge svg {
+  width: 25px;
+  height: 25px;
+}

@@ -1,0 +1,137 @@
+.card {
+    background: rgb(251, 247, 247);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    border-left: 6px solid transparent;
+
+    img {
+        height: 160px;
+        object-fit: cover;
+    }
+    // border: 2px red solid;
+    // height: 20rem;
+    // width: 24rem;
+    &:hover {
+        background: rgba(236, 236, 250, 0.777);
+        cursor: pointer;
+    }
+}
+
+.content {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // border: 2px red solid;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #e5e7eb;
+
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #ef4444;
+        padding: 8px;
+        border-radius: 20px;
+        &:hover {
+            background-color: #f3d5c8;
+        }
+    }
+
+    a {
+        border-radius: 20px;
+        color: #3b82f6;
+        padding: 8px;
+        &:hover {
+          background-color: #c8e5f3;
+      }
+    }
+}
+
+.pending {
+    border-left-color: #facc15;
+}
+
+.ongoing {
+    border-left-color: #3b82f6;
+}
+
+.completed {
+    border-left-color: #22c55e;
+}
+.deadline {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+.near {
+    color: #f59e0b;
+    font-weight: 500;
+}
+
+.overdue {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: #fefafa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 420px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.modal img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: rgb(248, 200, 200);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    font-size: 1rem;
+    &:hover {
+        background: rgb(207, 55, 55);
+    }
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #000000;
+    line-height: 1.4;
+}
