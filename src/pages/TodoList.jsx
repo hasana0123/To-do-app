@@ -1,24 +1,31 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TodoCard from "../components/TodoCard";
+import DeleteConfirm from "../components/DeleteConfirm";
 import { getTodos, deleteTodo } from "../services/todoService";
 import styles from "../styles/pages/TodoList.module.scss";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
 
   useEffect(() => {
-    setLoading(true);
     setTodos(getTodos());
     setLoading(false);
   }, []);
 
-  const handleDelete = (id) => {
-    if (window.confirm("Are you sure you want to delete this todo?")) {
-      deleteTodo(id);
-      setTodos(getTodos());
-    }
+  const openDeleteModal = (id) => {
+    setSelectedId(id);
+    setShowModal(true);
+  };
+
+  const handleConfirmDelete = () => {
+    deleteTodo(selectedId);
+    setTodos(getTodos());
+    setShowModal(false);
+    setSelectedId(null);
   };
 
   return (
@@ -31,9 +38,8 @@ const TodoList = () => {
       </div>
 
       {loading && <p className={styles.loading}>Loading...</p>}
-
       {!loading && todos.length === 0 && (
-        <p className={styles.empty}>No todos yet. Create one </p>
+        <p className={styles.empty}>No todos yet. Create one</p>
       )}
 
       {!loading && todos.length > 0 && (
@@ -42,11 +48,17 @@ const TodoList = () => {
             <TodoCard
               key={todo.id}
               todo={todo}
-              onDelete={handleDelete}
+              onDelete={() => openDeleteModal(todo.id)}
             />
           ))}
         </div>
       )}
+
+      <DeleteConfirm
+        isOpen={showModal}
+        onCancel={() => setShowModal(false)}
+        onConfirm={handleConfirmDelete}
+      />
     </div>
   );
 };
