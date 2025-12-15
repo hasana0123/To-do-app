@@ -50,9 +50,10 @@ const TodoCard = ({ todo, onDelete }) => {
           <Link to={`/todos/${todo.id}/edit`}>
             <Pencil size={18} />
           </Link>
-          <button onClick={() => onDelete(todo.id)}>
+          <button onClick={onDelete}>
             <Trash2 size={18} />
           </button>
+
         </div>
       </div>
 
